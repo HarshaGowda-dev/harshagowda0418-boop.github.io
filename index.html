@@ -32,7 +32,6 @@
     overflow-x: hidden;
   }
 
-  /* ── Scroll Progress Bar ── */
   #scroll-bar {
     position: fixed;
     top: 0; left: 0;
@@ -43,7 +42,6 @@
     transition: width 0.1s linear;
   }
 
-  /* ── Navbar ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -124,7 +122,6 @@
     transition: all 0.3s;
   }
 
-  /* ── Canvas ── */
   #neural-canvas {
     position: fixed;
     top: 0; left: 0;
@@ -134,13 +131,11 @@
     pointer-events: none;
   }
 
-  /* ── Sections ── */
   section {
     position: relative;
     z-index: 1;
   }
 
-  /* ── Hero ── */
   #hero {
     min-height: 100vh;
     display: flex;
@@ -292,7 +287,6 @@
   .hero-social a:hover { color: var(--accent); }
   .hero-social svg { width: 16px; height: 16px; fill: currentColor; }
 
-  /* ── Section Wrapper ── */
   .section-wrap {
     padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 8vw, 6rem);
     max-width: 1100px;
@@ -325,7 +319,6 @@
     margin: 0.6rem 0 3rem;
   }
 
-  /* ── Experience ── */
   .exp-card {
     position: relative;
     padding: 1.8rem 2rem;
@@ -390,7 +383,6 @@
     font-weight: 700;
   }
 
-  /* ── Education ── */
   .edu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -428,7 +420,6 @@
     display: inline-block;
   }
 
-  /* ── Skills ── */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -459,7 +450,6 @@
     transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* ── Tag cloud ── */
   .tag-list {
     display: flex;
     flex-wrap: wrap;
@@ -559,7 +549,6 @@
     top: 0.3rem;
   }
 
-  /* ── Achievements ── */
   .achievements-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -593,7 +582,6 @@
     line-height: 1.65;
   }
 
-  /* ── Languages ── */
   .lang-grid {
     display: flex;
     gap: 1.2rem;
@@ -617,7 +605,6 @@
     font-weight: 600;
   }
 
-  /* ── Footer ── */
   footer {
     position: relative;
     z-index: 1;
@@ -648,7 +635,6 @@
   }
   .footer-links a:hover { color: var(--accent); }
 
-  /* ── Fade-in animation ── */
   .fade-up {
     opacity: 0;
     transform: translateY(30px);
@@ -662,7 +648,6 @@
   .fade-up:nth-child(3) { transition-delay: 0.2s; }
   .fade-up:nth-child(4) { transition-delay: 0.3s; }
 
-  /* ── Mobile ── */
   @media (max-width: 700px) {
     .nav-links { display: none; flex-direction: column; gap: 1rem; }
     .nav-links.open {
@@ -685,7 +670,6 @@
 <div id="scroll-bar"></div>
 <canvas id="neural-canvas"></canvas>
 
-<!-- NAVBAR -->
 <nav id="navbar">
   <a href="#hero" class="nav-logo">Harsha<span>.</span></a>
   <ul class="nav-links" id="nav-links">
@@ -701,7 +685,6 @@
   </button>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-badge">Available for Opportunities</div>
@@ -735,7 +718,6 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-wrap">
     <p class="section-label fade-up">Work History</p>
@@ -759,7 +741,6 @@
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <div class="section-wrap">
     <p class="section-label fade-up">Academic Background</p>
@@ -780,7 +761,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-wrap">
     <p class="section-label fade-up">Technical Proficiency</p>
@@ -806,7 +786,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-wrap">
     <p class="section-label fade-up">What I've Built</p>
@@ -842,7 +821,6 @@
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section id="achievements">
   <div class="section-wrap">
     <p class="section-label fade-up">Highlights</p>
@@ -882,7 +860,6 @@
       </div>
     </div>
 
-    <!-- Languages -->
     <div style="margin-top:4rem">
       <p class="section-label fade-up">Languages</p>
       <div class="lang-grid fade-up" style="margin-top:1rem">
@@ -894,7 +871,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-name">Harsha <span>Gowda</span></div>
   <div class="lang-grid" style="gap:0.8rem">
@@ -914,7 +890,6 @@
 </footer>
 
 <script>
-/* ── Neural Network Background ── */
 (function() {
   const canvas = document.getElementById('neural-canvas');
   const ctx = canvas.getContext('2d');
@@ -977,19 +952,16 @@
   draw();
 })();
 
-/* ── Scroll Progress Bar ── */
 window.addEventListener('scroll', () => {
   const bar = document.getElementById('scroll-bar');
   const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
   bar.style.width = pct + '%';
 });
 
-/* ── Hamburger ── */
 document.getElementById('hamburger').addEventListener('click', function() {
   document.getElementById('nav-links').classList.toggle('open');
 });
 
-/* ── Typing Effect ── */
 const roles = [
   'Full Stack Developer',
   'Software Developer',
@@ -1021,7 +993,6 @@ function type() {
 }
 type();
 
-/* ── Skill Bars ── */
 const skills = [
   { name: 'Python', pct: 80 },
   { name: 'JavaScript', pct: 78 },
@@ -1047,7 +1018,6 @@ skills.forEach(s => {
     </div>`;
 });
 
-/* ── Intersection Observer (fade-up + skill bars) ── */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1065,7 +1035,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Also observe skills grid specifically
 const sg = document.getElementById('skills-grid');
 if (sg) {
   const skillObs = new IntersectionObserver((entries) => {
@@ -1081,7 +1050,6 @@ if (sg) {
   skillObs.observe(sg);
 }
 
-/* ── Download Resume (triggers print as PDF fallback) ── */
 document.getElementById('download-btn').addEventListener('click', function(e) {
   e.preventDefault();
   window.print();
